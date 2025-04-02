@@ -3,8 +3,16 @@ import 'package:provider/provider.dart';
 import 'providers/shoes_provider.dart';
 import 'repositories/shoes_repository.dart';
 import 'screens/home_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main()  async{
+
+// ...
+
+await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
   final ShoesRepository repository = FirebaseShoesRepository();
 
   runApp(
